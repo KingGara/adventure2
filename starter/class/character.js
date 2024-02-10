@@ -11,10 +11,9 @@ class Character {
   }
 
   applyDamage(amount) {
-    this.health -= amount {
-      if (health <= 0) {
-        this.die();
-      }
+    this.health -= amount
+    if (this.health <= 0) {
+      this.die();
     }
   }
 
@@ -22,6 +21,7 @@ class Character {
     this.currentRoom.items.push(...this.items);
     this.items = [];
     this.currentRoom = null;
+
   }
 
 }
