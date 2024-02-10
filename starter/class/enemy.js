@@ -1,9 +1,11 @@
-const {Character} = require('./character');
+const { Character } = require('./character');
 
 
 class Enemy extends Character {
   constructor(name, description, currentRoom) {
-    // Fill this in
+    this.name = name;
+    this.description = description;
+    this.currentRoom = currentRoom
   }
 
   setPlayer(player) {
@@ -28,7 +30,7 @@ class Enemy extends Character {
 
   rest() {
     // Wait until cooldown expires, then act
-    const resetCooldown = function() {
+    const resetCooldown = function () {
       this.cooldown = 0;
       this.act();
     };
