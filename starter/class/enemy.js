@@ -1,4 +1,5 @@
 const { Character } = require('./character');
+const { Food } = require('./food');
 
 
 class Enemy extends Character {
@@ -24,7 +25,11 @@ class Enemy extends Character {
   }
 
   takeSandwich() {
-    // Fill this in
+    const item = this.currentRoom.items.getItemByName('sandwich')
+    const index = this.currentRoom.items.indexOf(item)
+    if (item && item instanceof Food) {
+      this.currentRoom.splice(index, 1)
+    }
   }
 
   // Print the alert only if player is standing in the same room
@@ -55,7 +60,7 @@ class Enemy extends Character {
   }
 
   applyDamage(amount) {
-    // Fill this in
+    this.currentRoom
   }
 
 
